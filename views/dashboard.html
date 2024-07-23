@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Dashboard</title>
+    <style>
+        .cursor {
+            position: fixed;
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            background-color: white !important;
+            margin-left: -10px;
+            margin-top: -10px;
+            z-index: 1000;
+            backdrop-filter: grayscale(1);
+            mix-blend-mode: difference;
+            pointer-events: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        body {
+            background-color: rgb(251, 244, 254);
+        }
+        
+        .cursor.active {
+            transform: scale(1.5);
+        }
+    </style>
+    <script>
+        window.addEventListener("mousemove", (e) => {
+            let cursor = document.getElementById("cursor");
+
+            setTimeout(() => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            }, 25)
+            if (e.target.classList.contains("hover-card")) {
+                cursor.classList.add("active");
+            } else {
+                cursor.classList.remove("active");
+            }
+        })
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Cursor animation -->
+    <div class="cursor" id="cursor"></div>
+</body>
+
+</html>

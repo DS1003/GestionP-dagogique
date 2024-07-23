@@ -1,0 +1,14 @@
+{
+    "name": "ecole221/gestion-pedagogique",
+    "autoload": {
+        "psr-4": {
+            "Ecole221\\GestionPedagogique\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DS1003"
+        }
+    ],
+    "require": {}
+}
