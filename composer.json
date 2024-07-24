@@ -2,7 +2,9 @@
     "name": "ecole221/gestion-pedagogique",
     "autoload": {
         "psr-4": {
-            "Ecole221\\GestionPedagogique\\": "src/"
+            "Ecole221\\GestionPedagogique\\": "src/",
+            "App\\": "src/app/",
+            "Core\\": "src/core/"
         }
     },
     "authors": [
@@ -10,5 +12,8 @@
             "name": "DS1003"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "symfony/yaml": "^7.1"
+    }
 }
